@@ -29,6 +29,34 @@ gcloud compute --project=$PROJECT_ID firewall-rules create default-allow-http --
 2) Deploy a Compute Instance with a Remote Startup Script
 https://www.qwiklabs.com/focuses/1735?parent=catalog
 
+- Abrir Cloud Shell
+
+- Obtener el ID del Proyecto ejecutando el siguiente comando:
+
+	gcloud config list project
+
+- Crear una variable de entorno con el Id del Proyecto:
+
+	PROJECT_ID=[INGRESA_TU_ID_DEL_PROYECTO_AQUÍ]
+
+- Crear un Storage Bucket:
+
+	gsutil mb gs://$PROJECT_ID
+
+- Cargar Startup Script en Cloud Shell (Ver archivo adjunto en laboratorio)
+
+- Mover Startup Script desde Cloud Shell a Storage:
+
+	gsutil cp resources-install-web.sh gs://$PROJECT_ID
+
+- Ejecutar el siguiente comando para crear la máquina virtual:
+
+gcloud compute --project=$PROJECT_ID instances create instance-test --zone=us-central1-a --tags=http-server --metadata=startup-script-url=gs://$PROJECT_ID/resources-install-web.sh --scopes=https://www.googleapis.com/auth/devstorage.read_only
+
+- Ejecutar el siguiente comando para crear la regla de firewall que expone la máquina virtual:
+
+gcloud compute --project=$PROJECT_ID firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server 
+
 3) Configure a Firewall and a Startup Script with Deployment Manager
 https://www.qwiklabs.com/focuses/1736?parent=catalog
 
