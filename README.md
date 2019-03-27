@@ -1,7 +1,14 @@
-# gcp-qwiklabs-challenge
-Guía para realizar el Quest Challenge de Qwiklabs en Google Cloud Platform
+<img src="https://avatars1.githubusercontent.com/u/48249676?s=200&v=4" alt="Google Cloud Platform logo" title="Google Cloud Platform" align="right" height="96" width="96"/>
 
-1) Google Cloud Essential Skills: Challenge Lab
+# Google Cloud Developer Community Santiago [![Slack][slack_badge]][slack_link]
+
+[slack_badge]: https://img.shields.io/badge/slack-gcp-E01563.svg?style=flat
+[slack_link]: https://join.slack.com/t/gdgcloudscl/shared_invite/enQtNDg4NjQ2NTE3NDkwLThhMTI0NmQ5NDhjMGRhMzJhNmQwZDEzNWRlNzIzMTA3YWNjMWUyY2Q2OTg1ZTk4OTZiYmNiMDU1MWNjMWZjOTM
+
+# Guía para realizar el Quest Challenge de Qwiklabs en Google Cloud Platform
+
+
+### 1) Google Cloud Essential Skills: Challenge Lab
 https://www.qwiklabs.com/focuses/1734?parent=catalog
 
 - Abrir Cloud Shell
@@ -26,7 +33,7 @@ gcloud compute --project=$PROJECT_ID firewall-rules create default-allow-http --
 
 	sudo apt-get update && sudo apt-get install apache2 -y
 
-2) Deploy a Compute Instance with a Remote Startup Script
+### 2) Deploy a Compute Instance with a Remote Startup Script
 https://www.qwiklabs.com/focuses/1735?parent=catalog
 
 - Abrir Cloud Shell
@@ -57,17 +64,17 @@ gcloud compute --project=$PROJECT_ID instances create instance-test --zone=us-ce
 
 gcloud compute --project=$PROJECT_ID firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server 
 
-3) Configure a Firewall and a Startup Script with Deployment Manager
+### 3) Configure a Firewall and a Startup Script with Deployment Manager
 https://www.qwiklabs.com/focuses/1736?parent=catalog
 
-4) Configure Secure RDP using a Windows Bastion Host
+### 4) Configure Secure RDP using a Windows Bastion Host
 https://www.qwiklabs.com/focuses/1737?parent=catalog
 
-5) Build and Deploy a Docker Image to a Kubernetes Cluster
+### 5) Build and Deploy a Docker Image to a Kubernetes Cluster
 https://www.qwiklabs.com/focuses/1738?parent=catalog
 
-6) Scale Out and Update a Containerized Application on a Kubernetes Cluster
+### 6) Scale Out and Update a Containerized Application on a Kubernetes Cluster
 https://www.qwiklabs.com/focuses/1739?parent=catalog
 
-7) Migrate a MySQL Database to Google Cloud SQL
+### 7) Migrate a MySQL Database to Google Cloud SQL
 https://www.qwiklabs.com/focuses/1740?parent=catalog
